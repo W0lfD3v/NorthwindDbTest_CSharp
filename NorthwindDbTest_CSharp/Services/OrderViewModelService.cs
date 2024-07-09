@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace NorthwindDbTest_CSharp.Services
 {
-    public class OrdeViewModelService : IViewModelService<OrderViewModel, Order>
+    public class OrderViewModelService : IViewModelService<OrderViewModel, Order>
     {
-        public OrdeViewModelService()
+        public OrderViewModelService()
         {
                 
         }
@@ -25,7 +25,10 @@ namespace NorthwindDbTest_CSharp.Services
 
             return new OrderViewModel()
             {
-                id = source.id
+                id = source.id,
+                orderDate = source.orderDate,
+                shipName = source.shipName,
+                shippedDate = source.shippedDate
             };
         }
 

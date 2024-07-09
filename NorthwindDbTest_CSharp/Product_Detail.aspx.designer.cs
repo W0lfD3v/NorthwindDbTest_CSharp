@@ -87,12 +87,12 @@ namespace NorthwindDbTest_CSharp
         protected global::System.Web.UI.WebControls.Literal lblRecordCount;
 
         /// <summary>
-        /// gvProduct control.
+        /// gvOrders control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvProduct;
+        protected global::System.Web.UI.WebControls.GridView gvOrders;
     }
 }

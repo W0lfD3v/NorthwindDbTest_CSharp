@@ -31,37 +31,19 @@
 
                     <div class="col-12 mt-2">
                         <div class="table-responsive">
-                            <asp:GridView ID="gvProduct" runat="server"
+                            <asp:GridView ID="gvOrders" runat="server"
                                 AutoGenerateColumns="false"
                                 Width="100%"
                                 CellPadding="3"
                                 CssClass="table table-sm table-striped table-light"
-                                EmptyDataText="No products available."
-                                OnPreRender="gvProduct_PreRender"
-                                OnDataBound="gvProduct_DataBound">
+                                EmptyDataText="No orders for this product."
+                                OnPreRender="gvOrders_PreRender"
+                                OnDataBound="gvOrders_DataBound">
                                 <Columns>
-                                    <asp:TemplateField HeaderText="Name">
-                                        <ItemTemplate>
-                                            <asp:HyperLink runat="server" Target="_self" NavigateUrl='<%# Eval("id","~/Product_Detail.aspx?id={0}")%>'><%# $"{Eval("Name")}" %></asp:HyperLink>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="QuantityPerUnit" HeaderText="Qty Per Unit" />
-                                    <asp:TemplateField HeaderText="Unit Price">
-                                        <ItemTemplate>
-                                            <%# $"${Eval("UnitPrice")}" %>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="UnitsInStock" HeaderText="Units In Stock" />
-                                    <asp:TemplateField HeaderText="Total Unit Value">
-                                        <ItemTemplate>
-                                            <%# $"${Eval("TotalUnitValue")}" %>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Available">
-                                        <ItemTemplate>
-                                            <i class='bi bi-circle-fill <%# Convert.ToBoolean(Eval("IsAvailable")) ? "text-success" : "text-danger" %>'></i>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="id" HeaderText="Order Number" />
+                                    <asp:BoundField DataField="orderDate" HeaderText="Order Date" DataFormatString="{0:dd/MM/yyyy}"/>
+                                    <asp:BoundField DataField="shipName" HeaderText="Name" />
+                                    <asp:BoundField DataField="shippedDate" HeaderText="Date Shipped" DataFormatString="{0:dd/MM/yyyy}"/>
                                 </Columns>
                             </asp:GridView>
                         </div>

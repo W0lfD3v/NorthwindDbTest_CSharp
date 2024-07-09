@@ -16,5 +16,14 @@ namespace NorthwindDbTest_CSharp.ViewModels
         public int shipVia { get; set; }
         public float freight { get; set; }
         public string shipName { get; set; }
+        public DetailViewModel[] details { get; set; }
+    }
+
+    public class DetailViewModel : OrderViewModel
+    {
+        public int productId { get; set; }
+        public decimal unitPrice { get; set; }
+        public int quantity { get; set; }
+        public decimal discount { get; set; }
     }
 }

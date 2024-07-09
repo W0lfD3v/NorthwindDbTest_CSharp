@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NorthwindDbTest_CSharp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,17 +18,26 @@ namespace NorthwindDbTest_CSharp.Models
         public int shipVia { get; set; }
         public float freight { get; set; }
         public string shipName { get; set; }
-        public Address shipAddress { get; set; }
-        public Detail[] details { get; set; }
+        public Shipaddress shipAddress { get; set; }
+        public OrderDetail[] details { get; set; }
+    }
+
+    public class Shipaddress
+    {
+        public string street { get; set; }
+        public string city { get; set; }
+        public string region { get; set; }
+        public string postalCode { get; set; }
+        public string country { get; set; }
     }
 
     [Serializable]
-    public class Detail
+    public class OrderDetail
     {
         public int productId { get; set; }
-        public int unitPrice { get; set; }
+        public decimal unitPrice { get; set; }
         public int quantity { get; set; }
-        public int discount { get; set; }
+        public decimal discount { get; set; }
     }
 
 }

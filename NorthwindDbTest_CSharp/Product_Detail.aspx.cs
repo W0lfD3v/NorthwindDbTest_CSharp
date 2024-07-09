@@ -63,9 +63,21 @@ namespace NorthwindDbTest_CSharp
                     Response.Redirect("~/Products.aspx");
                 }
             }
+
+            using (OrdersRepository ordertRepo = new OrdersRepository())
+            {
+                OrderViewModelService orderViewModelService = new OrderViewModelService();
+                var orders = ordertRepo.GetAll();
+
+                if (orders != null)
+                {
+                    gvOrders.DataSource = orderViewModelService.CreateViewModel(orders);
+                    gvOrders.DataBind();
+                }
+            }
         }
 
-        protected void gvProduct_PreRender(object sender, EventArgs e)
+        protected void gvOrders_PreRender(object sender, EventArgs e)
         {
             GridView gv = (GridView)sender;
 
@@ -84,7 +96,7 @@ namespace NorthwindDbTest_CSharp
             }
         }
 
-        protected void gvProduct_DataBound(object sender, EventArgs e)
+        protected void gvOrders_DataBound(object sender, EventArgs e)
         {
             GridView gv = (GridView)sender;
 
