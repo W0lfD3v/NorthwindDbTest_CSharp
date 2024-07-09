@@ -1,46 +1,44 @@
-﻿<%@ Page Title="Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="NorthwindDbTest_CSharp.Products" %>
+﻿<%@ Page Title="Detail" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Product_Detail.aspx.cs" Inherits="NorthwindDbTest_CSharp.Product_Detail" %>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="./">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Products</li>
+                <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
             </ol>
         </nav>
         <div class="row mt-3">
             <h2 id="title"><%: Title %></h2>
             <asp:UpdatePanel ID="upResults" runat="server" UpdateMode="Conditional">
                 <ContentTemplate>
-                    <div class="col-12 mt-2">
-                        <div class="d-flex">
-                            <div class="me-sm-auto py-2">
-                                <span class="small"><asp:Literal ID="lblRecordCount" runat="server"></asp:Literal></span>
-                            </div>
-                            <div class="d-flex flex-wrap justify-content-end" style="grid-column-gap: 1rem;">
-                                <div class="form-check mr-3 align-self-center">
-                                    <asp:CheckBox ID="chkAvailableOnly" runat="server" Checked="false" Text="Show only available products" OnCheckedChanged="chkAvailableOnly_CheckedChanged" Enabled="true" AutoPostBack="true"/>
-                                </div>
-                                <div>
-                                    <div class="input-group">
-                                        <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search by product name..."></asp:TextBox>
-                                        <asp:LinkButton ID="btnSearch" runat="server" CssClass="btn btn-secondary" OnClick="btnSearch_Click">
-                                            <i class="bi bi-search"></i>
-                                        </asp:LinkButton>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <asp:Label runat="server" ID="pd_name" Text="Name:" />
+                    <div class="w-100"></div>
+                    <asp:Label runat="server" ID="pd_qpu" Text="Qty Per Unit:" />
+                    <div class="w-100"></div>
+                    <asp:Label runat="server" ID="pd_up" Text="Unit Price:" />
+                    <div class="w-100"></div>
+                    <asp:Label runat="server" ID="pd_uis" Text="Units In Stock:" />
+                    <div class="w-100"></div>
+                    <asp:Label runat="server" ID="pd_tuv" Text="Total Unit Value:" />
+                    <div class="w-100"></div>
+                    <asp:Label runat="server" ID="pd_a" Text="Available:" />
+                    <div class="w-100"></div>
+                    <div class="me-sm-auto py-2">
+                        <span class="small">
+                            <asp:Literal ID="lblRecordCount" runat="server"></asp:Literal></span>
                     </div>
+
                     <div class="col-12 mt-2">
                         <div class="table-responsive">
-                            <asp:GridView ID="gvProducts" runat="server" 
-                                AutoGenerateColumns="false" 
-                                Width="100%" 
+                            <asp:GridView ID="gvProduct" runat="server"
+                                AutoGenerateColumns="false"
+                                Width="100%"
                                 CellPadding="3"
                                 CssClass="table table-sm table-striped table-light"
-                                EmptyDataText = "No products available."
-                                OnPreRender="gvProducts_PreRender" 
-                                OnDataBound="gvProducts_DataBound">
+                                EmptyDataText="No products available."
+                                OnPreRender="gvProduct_PreRender"
+                                OnDataBound="gvProduct_DataBound">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Name">
                                         <ItemTemplate>
@@ -68,6 +66,7 @@
                             </asp:GridView>
                         </div>
                     </div>
+
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

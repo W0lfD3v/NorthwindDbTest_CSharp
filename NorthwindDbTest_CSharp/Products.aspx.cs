@@ -62,5 +62,37 @@ namespace NorthwindDbTest_CSharp
 
             lblRecordCount.Text = $"Showing 1 to {gv.Rows.Count} of {gv.Rows.Count} entries";
         }
+
+        protected void chkAvailableOnly_CheckedChanged(object sender, EventArgs e)
+        {
+            filterProducts();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            filterProducts();
+        }
+
+        private void filterProducts()
+        {
+            using (ProductsRepository productRepo = new ProductsRepository())
+            {
+                ProductViewModelService productViewModelService = new ProductViewModelService();
+                IEnumerable<Product> products = productRepo.GetAll();
+
+                if (products != null)
+                {
+                    if (chkAvailableOnly.Checked)
+                    {
+                        gvProducts.DataSource = productViewModelService.CreateViewModel(products).Where(x => x.IsAvailable == true && x.Name.Contains(txtSearch.Text)).OrderBy(x => x.Name);
+                    }
+                    else
+                    {
+                        gvProducts.DataSource = productViewModelService.CreateViewModel(products).Where(x => x.Name.Contains(txtSearch.Text)).OrderBy(x => x.Name);
+                    }
+                    gvProducts.DataBind();
+                }
+            }
+        }
     }
 }
