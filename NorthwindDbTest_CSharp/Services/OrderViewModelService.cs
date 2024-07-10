@@ -28,7 +28,8 @@ namespace NorthwindDbTest_CSharp.Services
                 id = source.id,
                 orderDate = source.orderDate,
                 shipName = source.shipName,
-                shippedDate = source.shippedDate
+                shippedDate = string.Format(source.shippedDate, "{yyyy-MM-dd}"),
+                details = source.details
             };
         }
 

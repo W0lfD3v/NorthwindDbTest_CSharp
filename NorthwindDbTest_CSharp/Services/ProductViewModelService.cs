@@ -27,6 +27,10 @@ namespace NorthwindDbTest_CSharp.Services
             {
                 Id = source.Id,
                 Name = source.Name,
+                SupplierId = source.SupplierId,
+                CategoryId = source.CategoryId,
+                UnitsOnOrder = source.UnitsOnOrder,
+                ReorderLevel = source.ReorderLevel,
                 IsAvailable = !source.Discontinued,
                 QuantityPerUnit = source.QuantityPerUnit,
                 TotalUnitValue = source.UnitPrice * source.UnitsInStock,

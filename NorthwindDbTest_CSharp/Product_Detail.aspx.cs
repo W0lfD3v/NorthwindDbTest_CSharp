@@ -1,4 +1,5 @@
-﻿using NorthwindDbTest_CSharp.DataAccess;
+﻿using Microsoft.Ajax.Utilities;
+using NorthwindDbTest_CSharp.DataAccess;
 using NorthwindDbTest_CSharp.Models;
 using NorthwindDbTest_CSharp.Services;
 using System;
@@ -12,12 +13,13 @@ namespace NorthwindDbTest_CSharp
 {
     public partial class Product_Detail : System.Web.UI.Page
     {
+        private string product_id;
         protected void Page_Load(object sender, EventArgs e)
         {
             Title = "Product Detail";
             if (!Page.IsPostBack)
             {
-                string product_id = Request.QueryString["ID"];
+                product_id = Request.QueryString["ID"];
                 product_id = product_id ?? "0";
 
                 if (product_id == "0")
@@ -30,7 +32,6 @@ namespace NorthwindDbTest_CSharp
                 try
                 {
                     result = Int32.Parse(product_id);
-                    Console.WriteLine(result);
                 }
                 catch (FormatException)
                 {
@@ -71,7 +72,7 @@ namespace NorthwindDbTest_CSharp
 
                 if (orders != null)
                 {
-                    gvOrders.DataSource = orderViewModelService.CreateViewModel(orders);
+                    gvOrders.DataSource = orderViewModelService.CreateViewModel(orders).Where(x => x.details.Any(y => y.productId == product_id));
                     gvOrders.DataBind();
                 }
             }

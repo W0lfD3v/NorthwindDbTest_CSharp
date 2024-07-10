@@ -43,7 +43,7 @@
                                     <asp:BoundField DataField="id" HeaderText="Order Number" />
                                     <asp:BoundField DataField="orderDate" HeaderText="Order Date" DataFormatString="{0:dd/MM/yyyy}"/>
                                     <asp:BoundField DataField="shipName" HeaderText="Name" />
-                                    <asp:BoundField DataField="shippedDate" HeaderText="Date Shipped" DataFormatString="{0:dd/MM/yyyy}"/>
+                                    <asp:BoundField DataField="shippedDate" HeaderText="Date Shipped"/>
                                 </Columns>
                             </asp:GridView>
                         </div>
