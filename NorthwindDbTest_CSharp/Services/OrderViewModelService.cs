@@ -1,4 +1,5 @@
-﻿using NorthwindDbTest_CSharp.Models;
+﻿using NorthwindDbTest_CSharp.DataAccess;
+using NorthwindDbTest_CSharp.Models;
 using NorthwindDbTest_CSharp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,14 @@ namespace NorthwindDbTest_CSharp.Services
             return new OrderViewModel()
             {
                 id = source.id,
+                customerId = source.customerId,
                 orderDate = source.orderDate,
                 shipName = source.shipName,
-                shippedDate = string.Format(source.shippedDate, "{yyyy-MM-dd}"),
-                details = source.details
+                shippedDate = source.shippedDate,
+                shipVia = source.shipVia,
+                freight = source.freight,
+                details = source.details,
+                totalCostValue = source.details.Sum(x => (x.unitPrice * x.quantity) - x.discount)
             };
         }
 

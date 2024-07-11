@@ -24,15 +24,6 @@ namespace NorthwindDbTest_CSharp.Models
         public IEnumerable<Detail> details { get; set; }
     }
 
-    public class Shipaddress //: Order
-    {
-        public string street { get; set; }
-        public string city { get; set; }
-        public string region { get; set; }
-        public string postalCode { get; set; }
-        public string country { get; set; }
-    }
-
     [Serializable]
     public class Detail
     {

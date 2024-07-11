@@ -51,6 +51,16 @@ namespace NorthwindDbTest_CSharp.DataAccess
         }
 
         /// <summary>
+        /// Get the <typeparamref name="T"/> from the API with the associated ID.
+        /// </summary>
+        /// <param name="id">The ID of the record to retrieve.</param>
+        /// <returns></returns>
+        public virtual T GetById(string id)
+        {
+            return GetDataFromEndpoint<T>($"{Endpoint}/{id}");
+        }
+
+        /// <summary>
         /// Make an API endpoint call and return the data that was retrieved.
         /// </summary>
         /// <typeparam name="TReturn">The return type of the data.</typeparam>

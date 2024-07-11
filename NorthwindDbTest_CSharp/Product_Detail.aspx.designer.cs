@@ -24,58 +24,175 @@ namespace NorthwindDbTest_CSharp
         protected global::System.Web.UI.UpdatePanel upResults;
 
         /// <summary>
-        /// pd_name control.
+        /// product_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pd_name;
+        protected global::System.Web.UI.WebControls.Label product_name;
 
         /// <summary>
-        /// pd_qpu control.
+        /// product_units_in_stock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pd_qpu;
+        protected global::System.Web.UI.WebControls.Label product_units_in_stock;
 
         /// <summary>
-        /// pd_up control.
+        /// product_unit_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pd_up;
+        protected global::System.Web.UI.WebControls.Label product_unit_price;
 
         /// <summary>
-        /// pd_uis control.
+        /// product_total_unit_value control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pd_uis;
+        protected global::System.Web.UI.WebControls.Label product_total_unit_value;
 
         /// <summary>
-        /// pd_tuv control.
+        /// product_quantity_per_unit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pd_tuv;
+        protected global::System.Web.UI.WebControls.Label product_quantity_per_unit;
 
         /// <summary>
-        /// pd_a control.
+        /// product_reorder_level control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label pd_a;
+        protected global::System.Web.UI.WebControls.Label product_reorder_level;
+
+        /// <summary>
+        /// product_units_on_order control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label product_units_on_order;
+
+        /// <summary>
+        /// product_available control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label product_available;
+
+        /// <summary>
+        /// category_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label category_name;
+
+        /// <summary>
+        /// category_description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label category_description;
+
+        /// <summary>
+        /// supplier_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_name;
+
+        /// <summary>
+        /// supplier_title control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_title;
+
+        /// <summary>
+        /// supplier_contact control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_contact;
+
+        /// <summary>
+        /// supplier_address_street control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_address_street;
+
+        /// <summary>
+        /// supplier_address_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_address_city;
+
+        /// <summary>
+        /// supplier_address_region control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_address_region;
+
+        /// <summary>
+        /// supplier_address_postalcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_address_postalcode;
+
+        /// <summary>
+        /// supplier_address_country control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_address_country;
+
+        /// <summary>
+        /// supplier_address_phone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label supplier_address_phone;
 
         /// <summary>
         /// lblRecordCount control.
